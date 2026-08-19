@@ -1,11 +1,19 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('DevOps CI/CD Project Working');
+app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("Node.js CI/CD Pipeline is Working Successfully!");
 });
 
-app.listen(3000, () => {
-    console.log('Running on port 3000');
+app.get("/feedback", (req, res) => {
+    res.send("Feedback: Application is working successfully!");
+});
+
+const PORT = 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
